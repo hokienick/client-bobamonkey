@@ -1,7 +1,21 @@
+import Nav from '@/components/Nav'
+import Hero from '@/components/Hero'
+import Ticker from '@/components/Ticker'
+import LineUp from '@/components/LineUp'
+import Vibe from '@/components/Vibe'
+import Locations from '@/components/Locations'
+import Footer from '@/components/Footer'
+
 export default function Home() {
   return (
     <main>
-      {/* Sections go here */}
+      <Nav />
+      <Hero />
+      <Ticker />
+      <LineUp />
+      <Vibe />
+      <Locations />
+      <Footer />
     </main>
-  );
+  )
 }
