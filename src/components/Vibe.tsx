@@ -19,24 +19,40 @@ export default function Vibe() {
         overflow: 'hidden',
       }}
     >
-      {/* Oversized background type — graphic, not decorative */}
+      {/* Right-edge drink photo */}
       <div
         aria-hidden="true"
         style={{
           position: 'absolute',
-          bottom: '-0.15em',
-          right: '-0.05em',
-          fontFamily: 'var(--font-display)',
-          fontSize: 'clamp(8rem, 22vw, 22rem)',
-          fontWeight: 400,
-          color: 'oklch(0.35 0.08 195)',
-          lineHeight: 1,
-          letterSpacing: '-0.03em',
-          userSelect: 'none',
+          top: 0,
+          right: 0,
+          bottom: 0,
+          width: 'clamp(280px, 38vw, 560px)',
           pointerEvents: 'none',
         }}
       >
-        SD
+        {/* Gradient fade from teal into image */}
+        <div
+          style={{
+            position: 'absolute',
+            inset: 0,
+            background: 'linear-gradient(to right, var(--accent) 0%, transparent 40%)',
+            zIndex: 1,
+          }}
+        />
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/instagram/ig-4.jpg"
+          alt=""
+          style={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            objectPosition: 'center center',
+            display: 'block',
+            opacity: 0.75,
+          }}
+        />
       </div>
 
       <div style={{ position: 'relative', maxWidth: '60ch' }}>

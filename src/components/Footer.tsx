@@ -177,11 +177,31 @@ export default function Footer() {
         >
           &copy; {new Date().getFullYear()} Boba Monkey. San Diego, CA.
         </p>
-        <div style={{ display: 'flex', gap: '4px', alignItems: 'center' }}>
-          <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: 'var(--brand-red)', display: 'inline-block' }} />
-          <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: 'var(--brand-red)', display: 'inline-block', opacity: 0.5 }} />
-          <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: 'var(--brand-red)', display: 'inline-block', opacity: 0.25 }} />
-        </div>
+        <p
+          style={{
+            fontFamily: 'var(--font-sans)',
+            fontSize: '0.72rem',
+            color: 'var(--border-bright)',
+            letterSpacing: '0.06em',
+          }}
+        >
+          Created by{' '}
+          <a
+            href="https://www.mistersogood.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              color: 'var(--border-bright)',
+              textDecoration: 'none',
+              borderBottom: '1px solid currentColor',
+              transition: 'color 0.2s ease',
+            }}
+            onMouseEnter={e => (e.currentTarget.style.color = 'var(--foreground)')}
+            onMouseLeave={e => (e.currentTarget.style.color = 'var(--border-bright)')}
+          >
+            Mr. So Good
+          </a>
+        </p>
       </div>
     </footer>
   )

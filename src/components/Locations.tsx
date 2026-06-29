@@ -85,34 +85,21 @@ export default function Locations() {
             }}
           >
             {/* Location tag */}
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-              <span
-                style={{
-                  fontFamily: 'var(--font-sub)',
-                  fontSize: '0.65rem',
-                  fontWeight: 700,
-                  letterSpacing: '0.18em',
-                  color: 'var(--brand-red)',
-                  textTransform: 'uppercase',
-                }}
-              >
-                {loc.tag}
-              </span>
-              <span
-                style={{
-                  fontFamily: 'var(--font-sub)',
-                  fontSize: '0.65rem',
-                  fontWeight: 600,
-                  letterSpacing: '0.12em',
-                  color: 'var(--border-bright)',
-                }}
-              >
-                0{i + 1}
-              </span>
-            </div>
+            <span
+              style={{
+                fontFamily: 'var(--font-sub)',
+                fontSize: 'clamp(0.8rem, 1.2vw, 1rem)',
+                fontWeight: 700,
+                letterSpacing: '0.12em',
+                color: 'var(--brand-red)',
+                textTransform: 'uppercase',
+              }}
+            >
+              {loc.tag}
+            </span>
 
-            {/* Shop photo — Adams Ave only (we have that shot) */}
-            {i === 0 && (
+            {/* Shop/vibe photo — Adams Ave gets the exterior, Mission Beach gets the outdoor coffees shot */}
+            {(i === 0 || i === 1) && (
               <div
                 style={{
                   borderRadius: '3px',
@@ -123,9 +110,9 @@ export default function Locations() {
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="/instagram/ig-6.jpg"
-                  alt="Boba Monkey Adams Ave location"
-                  style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }}
+                  src={i === 0 ? '/instagram/ig-6.jpg' : '/instagram/ig-2.jpg'}
+                  alt={i === 0 ? 'Boba Monkey Adams Ave location' : 'Boba Monkey Mission Beach drinks'}
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: i === 0 ? 'center top' : 'center center' }}
                 />
               </div>
             )}
@@ -158,7 +145,8 @@ export default function Locations() {
                   <br />
                   {loc.city}
                 </p>
-                {loc.phone && (
+                {/* Always reserve phone line height for alignment — show placeholder when unknown */}
+                {loc.phone ? (
                   <a
                     href={`tel:${loc.phone.replace(/\D/g, '')}`}
                     style={{
@@ -175,6 +163,18 @@ export default function Locations() {
                   >
                     {loc.phone}
                   </a>
+                ) : (
+                  <span
+                    style={{
+                      fontFamily: 'var(--font-sans)',
+                      fontSize: '0.9rem',
+                      color: 'var(--border-bright)',
+                      marginTop: '6px',
+                      display: 'block',
+                    }}
+                  >
+                    Phone unavailable
+                  </span>
                 )}
               </address>
             </div>

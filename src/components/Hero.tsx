@@ -8,7 +8,7 @@ export default function Hero() {
   return (
     <section
       style={{
-        minHeight: '100svh',
+        minHeight: 'calc(100svh - 52px)',
         backgroundColor: 'var(--background)',
         position: 'relative',
         overflow: 'hidden',
@@ -92,23 +92,6 @@ export default function Hero() {
       {/* Main content */}
       <div style={{ position: 'relative', maxWidth: '75%' }}>
         {/* Eyebrow */}
-        <motion.p
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1, ease }}
-          style={{
-            fontFamily: 'var(--font-sub)',
-            fontSize: 'clamp(0.65rem, 1.2vw, 0.8rem)',
-            fontWeight: 600,
-            letterSpacing: '0.2em',
-            color: 'var(--brand-red)',
-            marginBottom: 'clamp(16px, 2.5vw, 28px)',
-            marginLeft: '4px',
-          }}
-        >
-          YOUR NEIGHBORHOOD
-        </motion.p>
-
         {/* BOBA — massive Tanker, white */}
         <div style={{ overflow: 'hidden', lineHeight: 0.9 }}>
           <motion.h1

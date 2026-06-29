@@ -1,8 +1,9 @@
 import Nav from '@/components/Nav'
 import Hero from '@/components/Hero'
 import Ticker from '@/components/Ticker'
+import VideoMoment from '@/components/VideoMoment'
 import LineUp from '@/components/LineUp'
-import InstaStrip from '@/components/InstaStrip'
+import DrinkShowcase from '@/components/DrinkShowcase'
 import Vibe from '@/components/Vibe'
 import Locations from '@/components/Locations'
 import Footer from '@/components/Footer'
@@ -13,8 +14,9 @@ export default function Home() {
       <Nav />
       <Hero />
       <Ticker />
+      <VideoMoment />
       <LineUp />
-      <InstaStrip />
+      <DrinkShowcase />
       <Vibe />
       <Locations />
       <Footer />
