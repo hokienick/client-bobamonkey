@@ -44,25 +44,49 @@ export default function Hero() {
           position: 'absolute',
           top: 'clamp(60px, 10vw, 120px)',
           right: 'clamp(-60px, -2vw, -20px)',
-          width: 'clamp(200px, 28vw, 380px)',
-          height: 'clamp(200px, 28vw, 380px)',
+          width: 'clamp(200px, 28vw, 400px)',
+          height: 'clamp(200px, 28vw, 400px)',
         }}
       >
-        <svg viewBox="0 0 380 380" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '100%', height: '100%' }}>
-          <circle cx="190" cy="190" r="188" fill="oklch(0.53 0.23 27)" />
-          {/* Circular text path */}
+        {/* Circular text ring */}
+        <svg
+          viewBox="0 0 400 400"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          style={{ width: '100%', height: '100%', position: 'absolute', inset: 0 }}
+        >
           <defs>
-            <path id="circle-text-path" d="M 190,190 m -155,0 a 155,155 0 1,1 310,0 a 155,155 0 1,1 -310,0" />
+            <path id="circle-text-path" d="M 200,200 m -168,0 a 168,168 0 1,1 336,0 a 168,168 0 1,1 -336,0" />
           </defs>
-          <text fontFamily="var(--font-sub)" fontSize="22" fontWeight="700" letterSpacing="14" fill="white" opacity="0.9">
+          {/* Outer ring border */}
+          <circle cx="200" cy="200" r="192" stroke="oklch(0.53 0.23 27)" strokeWidth="2" />
+          <text fontFamily="var(--font-sub)" fontSize="19" fontWeight="700" letterSpacing="12" fill="white" opacity="0.85">
             <textPath href="#circle-text-path">
-              BOBA MONKEY ® SAN DIEGO CA · ORDER NOW ·
+              BOBA MONKEY ® SAN DIEGO CA · ORDER NOW ·&nbsp;
             </textPath>
           </text>
-          {/* Inner content */}
-          <text x="190" y="178" textAnchor="middle" fontFamily="var(--font-display)" fontSize="52" fill="white">BOBA</text>
-          <text x="190" y="230" textAnchor="middle" fontFamily="var(--font-display)" fontSize="52" fill="white">MONKEY</text>
         </svg>
+        {/* Actual logo centered — counter-rotates to stay upright */}
+        <motion.div
+          animate={{ rotate: -360 }}
+          transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
+          style={{
+            position: 'absolute',
+            top: '12%',
+            left: '12%',
+            width: '76%',
+            height: '76%',
+            borderRadius: '50%',
+            overflow: 'hidden',
+          }}
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="https://d1w7312wesee68.cloudfront.net/M_VZ7mo4Wxbl9n-LdLAqk4x91De9gF4XedjRSR2pV5Q/ext:webp/quality:85/preset:xxl/plain/s3://toast-sites-resources-prod/restaurantImages/836bd502-a622-40a6-9172-379af6a5b14f/BobaMonkeyFinalcopy.png"
+            alt="Boba Monkey logo"
+            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+          />
+        </motion.div>
       </motion.div>
 
       {/* Main content */}
