@@ -42,8 +42,8 @@ export default function Hero() {
         transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
         style={{
           position: 'absolute',
-          top: 'clamp(60px, 10vw, 120px)',
-          right: 'clamp(-60px, -2vw, -20px)',
+          top: 'clamp(70px, 10vw, 120px)',
+          right: 'clamp(20px, 3vw, 48px)',
           width: 'clamp(200px, 28vw, 400px)',
           height: 'clamp(200px, 28vw, 400px)',
         }}
