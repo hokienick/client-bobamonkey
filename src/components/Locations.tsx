@@ -111,6 +111,25 @@ export default function Locations() {
               </span>
             </div>
 
+            {/* Shop photo — Adams Ave only (we have that shot) */}
+            {i === 0 && (
+              <div
+                style={{
+                  borderRadius: '3px',
+                  overflow: 'hidden',
+                  aspectRatio: '16/9',
+                  marginBottom: '4px',
+                }}
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/instagram/ig-6.jpg"
+                  alt="Boba Monkey Adams Ave location"
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }}
+                />
+              </div>
+            )}
+
             {/* Name + address */}
             <div>
               <h3
